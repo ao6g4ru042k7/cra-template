@@ -44,3 +44,45 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# Create React App Template
+
+## Build template
+
+> The creation steps started by template, this template has been processed
+
+setup [cz-cli](https://github.com/commitizen/cz-cli)
+
+```
+npx commitizen init cz-conventional-changelog --save-dev --save-exact
+```
+
+```
+echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+```
+
+setup [husky](https://typicode.github.io/husky)
+
+```
+npx husky-init && npm install
+```
+
+```
+npx husky add .husky/prepare-commit-msg "exec < /dev/tty && npx cz --hook || true"
+npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
+npx husky add .husky/pre-commit "npx lint-staged"
+```
+
+setup lint-stage
+
+```
+add to package.json
+{
+    ...
+    "lint-staged": {
+        "**/*.ts?(x)": "bash -c tsc -p tsconfig.json --noEmit",
+        "**/*.{js,jsx,ts,tsx}": "eslint --fix",
+        "**/*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
+    }
+}
+```
