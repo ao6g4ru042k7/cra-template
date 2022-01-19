@@ -10,7 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <p>{process.env.REACT_APP_API_URL}</p>
+        <p className="mb-20">{process.env.REACT_APP_API_URL}</p>
         <Button type="primary">Primary Button</Button>
       </header>
     </div>
