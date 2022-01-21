@@ -45,6 +45,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+---
+
 # Create React App Template
 
 ## Build template
@@ -86,3 +88,17 @@ add to package.json
     }
 }
 ```
+
+---
+
+## CSS Framework
+
+#### tailwind
+
+For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
+
+#### ant design
+
+For full documentation, visit [ant.design](https://ant.design/).
+
+---
