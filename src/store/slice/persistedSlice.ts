@@ -14,7 +14,7 @@ const initialState: PersistedState = {
 };
 
 const persistedConfig = {
-  key: 'persistedSlice',
+  key: 'persisted',
   storage,
 };
 
@@ -25,7 +25,7 @@ export const persistedSlice = createSlice({
   reducers: {
     // Use the PayloadAction type to declare the contents of `action.payload`
     setName: (state, action: PayloadAction<string>) => {
-      state.name += action.payload;
+      state.name = action.payload;
     },
   },
 });

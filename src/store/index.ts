@@ -1,4 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+} from 'redux-persist';
 import exampleReducer from './slice/exampleSlice';
 import postsReducer from './slice/postsSlice';
 import persistedReducer from './slice/persistedSlice';
@@ -9,6 +17,12 @@ export const store = configureStore({
     posts: postsReducer,
     persisted: persistedReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
