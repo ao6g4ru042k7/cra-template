@@ -49,7 +49,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # Create React App Template
 
-## Build template
+## Build Template Pre-Commit
 
 > The creation steps started by template, this template has been processed
 
@@ -93,12 +93,134 @@ add to package.json
 
 ## CSS Framework
 
-#### tailwind
+#### Tailwind
 
 For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
 
-#### ant design
+#### Ant Design
 
 For full documentation, visit [ant.design](https://ant.design/).
 
 ---
+
+## File Structure
+
+```
+src
+ ┣ 📂apis // all apis
+ ┣ 📂assets // image that will be encrypted
+ ┃ ┗ 📜logo.svg
+ ┣ 📂components // components shared within 📂views
+ ┃ ┗ 📂Example
+ ┣ 📂constants // shared constant
+ ┣ 📂hooks // shared hook
+ ┣ 📂layout // the outermost layout component
+ ┃ ┣ 📂Footer
+ ┃ ┣ 📂Header
+ ┃ ┗ 📂Menu
+ ┣ 📂locales // i18n
+ ┣ 📂logics // store business logic
+ ┣ 📂router
+ ┣ 📂store
+ ┣ 📂styles
+ ┣ 📂utils
+ ┣ 📂views
+ ┃ ┣ 📂Page1
+ ┃ ┣ 📂Page2
+ ┃ ┗ 📂Page3
+ ┣ 📜index.tsx
+ ┣ 📜react-app-env.d.ts // global typescript types
+ ┗ 📜setupTests.ts
+```
+
+#### Common Styles Structure
+
+Refer to the structure of sass [7-1-pattern](https://sass-guidelin.es/#the-7-1-pattern).
+
+```
+📂styles
+ ┣ 📂abstracts
+ ┃ ┣ 📜_functions.scss
+ ┃ ┣ 📜_mixins.scss
+ ┃ ┣ 📜_placeholders.scss
+ ┃ ┗ 📜_variables.scss
+ ┣ 📂base
+ ┃ ┣ 📜_reset.scss
+ ┃ ┗ 📜_typography.scss
+ ┣ 📂components
+ ┃ ┗ 📜_buttons.scss
+ ┣ 📂Layout
+ ┃ ┗ 📜_navigation.scss
+ ┣ 📂pages
+ ┃ ┗ 📜_home.scss
+ ┣ 📂themes
+ ┃ ┣ 📜_admin.scss
+ ┃ ┗ 📜_theme.scss
+ ┣ 📂vendors
+ ┃ ┣ 📜_antd.scss
+ ┃ ┗ 📜_tailwind.scss
+ ┗ 📜main.scss
+```
+
+#### Component Structure
+
+The first letter of a folder of react component must be capitalized.(ex: 📂ExampleComponent)
+If the components in the component have shared components, put them under the 📂components(ex: 📂Title is a common component of 📂Box and 📂Content)
+
+```
+📂ExampleComponent
+ ┣ 📂Box
+ ┃ ┣ 📜index.module.less
+ ┃ ┗ 📜index.tsx
+ ┣ 📂Content
+ ┃ ┣ 📜index.module.less
+ ┃ ┗ 📜index.tsx
+ ┣ 📂components
+ ┃ ┗ 📂Title
+ ┃ ┃ ┣ 📜index.module.less
+ ┃ ┃ ┗ 📜index.tsx
+ ┣ 📂data
+ ┃ ┗ 📜column.ts
+ ┣ 📂hooks
+ ┃ ┗ 📜useCustom.ts
+ ┣ 📜dataSlice.ts //Global Variables in Component
+ ┣ 📜index.module.less
+ ┣ 📜index.test.tsx
+ ┗ 📜index.tsx
+```
+
+---
+
+## Coding Style
+
+##### Typing Component Props
+
+❌
+
+```
+interface Props { title: string; }
+const Example:React.FC<Props> = ({ title }) => <div>{title}</div>;
+```
+
+✅
+
+```
+interface Props { title: string; }
+const Example = ({ title }: Props) => <div>{title}</div>;
+```
+
+##### Props Deconstruct
+
+❌
+
+```
+interface Props { title: string; }
+const Example = ({ title }: Props) => <div>{title}</div>;
+```
+
+✅
+
+```
+interface Props { title: string; }
+const Example = (props: Props) => <div>{props.title}</div>;
+```

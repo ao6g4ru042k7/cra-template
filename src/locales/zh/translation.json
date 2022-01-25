@@ -1,0 +1,9 @@
+{
+  "title": "zh:Welcome to react using react-i18next",
+  "description": {
+    "part1": "zh:To get started, edit <1>src/App.js</1> and save to reload.",
+    "part2": "zh:Switch language between english and german using buttons above."
+  },
+  "hello": "zh:hello!!!",
+  "link": "zh:Let's learn React <1>here</1>"
+}

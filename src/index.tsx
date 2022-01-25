@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store } from 'store';
 import 'styles/main.scss';
 import App from 'views/App';
+import 'locales/i18n';
 
 const persistor = persistStore(store);
 
