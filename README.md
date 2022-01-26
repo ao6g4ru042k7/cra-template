@@ -111,18 +111,15 @@ src
  ┣ 📂assets // image that will be encrypted
  ┃ ┗ 📜logo.svg
  ┣ 📂components // components shared within 📂views
- ┃ ┗ 📂Example
+ ┃ ┣ 📂Example
+ ┃ ┗ 📂Layout // the outermost layout component
  ┣ 📂constants // shared constant
  ┣ 📂hooks // shared hook
- ┣ 📂layout // the outermost layout component
- ┃ ┣ 📂Footer
- ┃ ┣ 📂Header
- ┃ ┗ 📂Menu
  ┣ 📂locales // i18n
- ┣ 📂logics // store business logic
+ ┣ 📂logics // business logic
  ┣ 📂router
  ┣ 📂store
- ┣ 📂styles
+ ┣ 📂styles // global css
  ┣ 📂utils
  ┣ 📂views
  ┃ ┣ 📂Page1
@@ -164,8 +161,8 @@ Refer to the structure of sass [7-1-pattern](https://sass-guidelin.es/#the-7-1-p
 
 #### Component Structure
 
-The first letter of a folder of react component must be capitalized.(ex: 📂ExampleComponent)
-If the components in the component have shared components, put them under the 📂components(ex: 📂Title is a common component of 📂Box and 📂Content)
+The first letter of a folder of react component must be capitalized.(ex: `📂ExampleComponent`)
+If the components in the component have shared components, put them under the `📂components`(ex: `📂Title` is a common component of `📂Box` and `📂Content`)
 
 ```
 📂ExampleComponent
@@ -187,6 +184,88 @@ If the components in the component have shared components, put them under the �
  ┣ 📜index.module.less
  ┣ 📜index.test.tsx
  ┗ 📜index.tsx
+```
+
+#### Env
+
+```
+📂src
+ ┣ ...
+ ┗ 📂utils
+ ┃ ┣ ...
+ ┃ ┗ 📜env.ts // convert variable types
+📂types
+ ┣ ...
+ ┗ 📜global.d.ts // declaring variable types
+📜.env
+```
+
+Add environment variable steps
+
+1. `📜.env` add variable
+
+```
+REACT_APP_PORT=3000
+```
+
+2. `📜global.d.ts` declaring variable types
+
+```
+export interface GlobEnvConfig {
+  REACT_APP_PORT: number;
+}
+```
+
+3. `📜env.ts` convert variable types
+
+```
+import { GlobEnvConfig } from '../../types/global';
+
+export function getAppEnvConfig() {
+  const { REACT_APP_PORT } = process.env;
+  return {
+    REACT_APP_PORT: Number(REACT_APP_PORT),
+  } as unknown as GlobEnvConfig;
+}
+
+```
+
+#### Router
+
+#### Api
+
+```
+📦apis
+ ┗ 📂example
+ ┃ ┣ 📂model
+ ┃ ┃ ┗ 📜optionModel.ts
+ ┃ ┣ 📜defHttp.ts
+ ┃ ┗ 📜index.ts
+```
+
+1. Create axios at `📜defHttp.ts`
+2. Create an interface for api requests and responses in `📂model`, request should be suffixed with `Params` and response should be suffixed with `Response`
+3. Add api in `📜index.ts`
+
+#### Store (Redux)
+
+Different views need to be shared and can be placed in the `📂slice`, otherwise they can be placed in the component
+
+```
+📂store
+ ┣ 📂slice
+ ┃ ┣ 📜exampleSlice.ts
+ ┃ ┣ 📜persistedSlice.ts
+ ┃ ┗ 📜postsSlice.ts
+ ┣ 📜hook.ts
+ ┗ 📜index.ts
+```
+
+```
+📂ExampleComponent
+ ┣ 📜dataSlice.ts
+ ┣ 📜index.tsx
+ ┗ ...
 ```
 
 ---
@@ -215,12 +294,16 @@ const Example = ({ title }: Props) => <div>{title}</div>;
 
 ```
 interface Props { title: string; }
-const Example = ({ title }: Props) => <div>{title}</div>;
+const Example = (props: Props) => <div>{props.title}</div>;
 ```
 
 ✅
 
 ```
 interface Props { title: string; }
-const Example = (props: Props) => <div>{props.title}</div>;
+const Example = ({ title }: Props) => <div>{title}</div>;
 ```
+
+#### Learn More
+
+You can learn more in the [React Typescript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/) documentation.

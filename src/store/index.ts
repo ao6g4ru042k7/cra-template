@@ -10,12 +10,14 @@ import {
 import exampleReducer from './slice/exampleSlice';
 import postsReducer from './slice/postsSlice';
 import persistedReducer from './slice/persistedSlice';
+import errorReducer from './slice/errorSlice';
 
 export const store = configureStore({
   reducer: {
     example: exampleReducer,
     posts: postsReducer,
     persisted: persistedReducer,
+    error: errorReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
