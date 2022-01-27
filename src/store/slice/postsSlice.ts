@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from 'store';
+
+import type { RootState } from '../index';
 
 // Define a type for the slice state
 interface PostsState {
