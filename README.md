@@ -110,11 +110,12 @@ src
  ┣ 📂apis // all apis
  ┣ 📂assets // image that will be encrypted
  ┃ ┗ 📜logo.svg
- ┣ 📂components // components shared within 📂views
+ ┣ 📂components // shared components
  ┃ ┣ 📂App // global component
  ┃ ┣ 📂Example
  ┃ ┗ 📂Layout // the outermost layout component
  ┣ 📂constants // shared constant
+ ┣ 📂containers // shared containers
  ┣ 📂hooks // shared hook
  ┣ 📂locales // i18n
  ┣ 📂logics // business logic
@@ -175,6 +176,10 @@ If the components in the component have shared components, put them under the `�
  ┃ ┗ 📜index.tsx
  ┣ 📂components
  ┃ ┗ 📂Title
+ ┃ ┃ ┣ 📜index.module.less
+ ┃ ┃ ┗ 📜index.tsx
+ ┣ 📂containers
+ ┃ ┗ 📂Table
  ┃ ┃ ┣ 📜index.module.less
  ┃ ┃ ┗ 📜index.tsx
  ┣ 📂data

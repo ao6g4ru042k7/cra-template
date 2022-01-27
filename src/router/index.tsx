@@ -1,4 +1,4 @@
-import LayoutDemo from 'components/Layout';
+import LayoutDemo from 'containers/Layout';
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from 'views/Dashboard';
 import Page11 from 'views/Page1/Page1-1';

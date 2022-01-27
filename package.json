@@ -78,10 +78,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "lint-staged": {
-    "**/*.ts?(x)": "bash -c tsc -p tsconfig.json --noEmit",
-    "**/*.{js,jsx,ts,tsx}": "eslint --fix",
-    "**/*.{js,jsx,ts,tsx,json,css,less,md}": "prettier --write"
   }
 }

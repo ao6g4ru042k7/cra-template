@@ -1,2 +1,2 @@
-const Table = () => <div>Table</div>;
-export default Table;
+const table = () => <div>Table</div>;
+export default table;

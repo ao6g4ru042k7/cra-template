@@ -8,7 +8,7 @@ import 'styles/main.scss';
 
 import 'locales/i18n';
 import { BrowserRouter } from 'react-router-dom';
-import App from 'components/App';
+import App from 'containers/App';
 
 const persistor = persistStore(store);
 
