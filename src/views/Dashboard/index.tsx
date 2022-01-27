@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from 'store/hook';
 import { setName } from 'store/slice/persistedSlice';
 import classes from './index.module.less';
 
-const App = () => {
+const Dashboard = () => {
   const name = useAppSelector((state) => state.persisted.name);
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
@@ -30,4 +30,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Dashboard;

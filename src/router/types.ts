@@ -4,7 +4,7 @@ export interface RouteMeta {
   orderNo: number;
   icon: string;
   title: string;
-  hideChildrenInMenu: boolean;
+  // hideChildrenInMenu: boolean;
 }
 
 export interface AppRouteModule extends RouteObject {

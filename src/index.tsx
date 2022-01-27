@@ -5,8 +5,10 @@ import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store } from 'store';
 import 'styles/main.scss';
-import App from 'views/App';
+
 import 'locales/i18n';
+import { BrowserRouter } from 'react-router-dom';
+import App from 'components/App';
 
 const persistor = persistStore(store);
 
@@ -14,7 +16,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </PersistGate>
     </Provider>
   </React.StrictMode>,
