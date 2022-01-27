@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Layout } from 'antd';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+
 import classes from './index.module.less';
 import Menu from './Menu';
 

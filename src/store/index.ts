@@ -7,10 +7,11 @@ import {
   REGISTER,
   REHYDRATE,
 } from 'redux-persist';
-import exampleReducer from './slice/exampleSlice';
-import postsReducer from './slice/postsSlice';
-import persistedReducer from './slice/persistedSlice';
+
 import errorReducer from './slice/errorSlice';
+import exampleReducer from './slice/exampleSlice';
+import persistedReducer from './slice/persistedSlice';
+import postsReducer from './slice/postsSlice';
 
 export const store = configureStore({
   reducer: {

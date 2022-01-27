@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
+
 import type { RootState } from '../index';
 
 // Define a type for the slice state

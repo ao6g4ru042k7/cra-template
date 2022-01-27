@@ -17,7 +17,12 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "simple-import-sort"
+  ],
   "settings": {
     "import/resolver": {
       "typescript": {}
@@ -50,6 +55,8 @@
         "namedComponents": "arrow-function",
         "unnamedComponents": "arrow-function"
       }
-    ]
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
   }
 }

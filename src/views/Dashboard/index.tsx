@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from 'store/hook';
 import { setName } from 'store/slice/persistedSlice';
+
 import classes from './index.module.less';
 
 const Dashboard = () => {

@@ -1,4 +1,5 @@
 import Router from 'router';
+
 import classes from './index.module.less';
 
 const App = () => (
