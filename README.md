@@ -111,6 +111,7 @@ src
  ┣ 📂assets // image that will be encrypted
  ┃ ┗ 📜logo.svg
  ┣ 📂components // components shared within 📂views
+ ┃ ┣ 📂App // global component
  ┃ ┣ 📂Example
  ┃ ┗ 📂Layout // the outermost layout component
  ┣ 📂constants // shared constant
